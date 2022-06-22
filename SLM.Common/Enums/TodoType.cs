@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SLM.Data.Enums;
+namespace SLM.Common.Enums;
 
 public enum TodoType
 {

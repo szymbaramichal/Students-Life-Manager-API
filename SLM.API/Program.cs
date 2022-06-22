@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using SLM.Business.Repositories;
+using SLM.Business.Repositories.TodoRepositories;
 using SLM.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(x => x.UseNpgsql("Server=localhost;Port=5432;Database=user;Uid=user;Pwd=passwd123!"));
+builder.Services.AddScoped<ITodoRepository, TodoRepository>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 

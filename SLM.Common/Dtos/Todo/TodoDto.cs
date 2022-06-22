@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SLM.Data.Entities;
+namespace SLM.Common.Dtos.Todo;
 
-public class TodoEntity : BaseEntity
+public class TodoDto
 {
+    public int Id { get; set; }
     public string Title { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public DateTime EndDate { get; set; }
     public TodoType TodoType { get; set; }
 }
-
